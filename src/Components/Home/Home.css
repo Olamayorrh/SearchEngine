@@ -1,0 +1,49 @@
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    width: 100%;
+}
+
+.container1 .logo{
+    margin: 10px;
+}
+
+#brand{
+    width:150px;
+}
+.search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search{
+    width:20px;
+    margin-right: 5px;
+    
+
+}
+
+
+.container1 .search{
+    border: 2px solid black;
+    padding: 10px;
+    width: 50%;
+    border-radius: 30px;
+}
+
+#cancel{
+    margin: 5px;
+}
+
+.search input{
+    width:550px;
+    /* padding: 10px; */
+    font-size: 18px;
+    border:none;
+    outline: none;
+}
