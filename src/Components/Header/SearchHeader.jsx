@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
-import logo from './images/logo.png'
+
 import { useEffect, useState } from "react";
 import { FaMicrophone } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
+import "./Header.css"
+
 
 const SearchHeader = ({search, searchsetter})=>{
     const [searchText, setSearchText] = useState('');
@@ -32,19 +34,21 @@ const SearchHeader = ({search, searchsetter})=>{
    
     return(
        
-       <div>
-            <NavLink to={"/"}>
+       <div className="resultPage" >
+            {/* <NavLink to={"/"}>
                 <img src={logo} alt="Product Logo" />
-            </NavLink>
+            </NavLink> */}
 
-            <div style={{width:"60%", display:"flex", border:'2px solid black',padding:"10px",justifyContent:"center", alignItems:"center"}}>
-            <FaSearch onClick={HandleSearch}/>
-            <form style={{width:"100% "}} onSubmit={SubmitHandler}>
+            <div className="searchBox">
+            <FaSearch onClick={HandleSearch} size={20}/>
+            <form  onSubmit={SubmitHandler}>
                 <input type="text" value={searchText} onChange={(e)=>setSearchText(e.target.value)} style={{width:"100%"}}/>
             </form>
-            {searchText? <MdCancel onClick={ClearInput}/>:null}
-            <button><FaMicrophone id='mic'/></button>
+            {searchText? <MdCancel onClick={ClearInput} size={20}/>:null}
+            
             </div>
+
+            <FaMicrophone id='mic' size={30} />
         </div>
     )
 }

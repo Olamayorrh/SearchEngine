@@ -2,16 +2,15 @@ import {Route, Routes, useNavigate} from "react-router-dom"
 
 
 
-import Layout from "./Components/Layout/Layout"
+
 import Home from "./Components/Home/Home"
-import Users from "./Pages/Users"
-import Mail from "./Pages/Mail"
-import Apps from "./Pages/Apps"
+
 import { useState } from "react"
-import Navbar from "./Components/Navbar/Navbar"
-import SearchDisplay from "./Pages/Display"
+
+
 import {  SearchData } from "./Api/WordSearch"
 import VoiceSearch from "./Components/VoiceSearch/VoiceSearch"
+import SearchDisplay from "./Components/Display/Display"
 
 
 
@@ -28,17 +27,17 @@ const searchsetter = async (word)=>{
     
 
     const Searchdata = await SearchData(word);
-    setGoogledData(Searchdata);
+     setGoogledData(Searchdata);
     
     navigate("/search");
-    // console.log(googledData);
+     console.log(googledData);
 }
 
 
     return(
         <div>
              
-                    <Navbar />
+                   
                     
                     <Routes>
                     <Route path='/' element={<Home searchsetter={searchsetter}/>} />
